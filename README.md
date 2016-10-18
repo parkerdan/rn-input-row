@@ -1,0 +1,192 @@
+# rn-input-row
+
+- This is a HIGHLY customizable ANIMATED input row for React-Native.
+
+- Good for single line form inputs.
+
+##### Requires react-native-vector-icons/FontAwesome
+###### All Icon Names are the Font Awesome available options
+
+- There are are built in default values, but your can change just about anything.
+
+```js
+npm install rn-input-row --save
+npm install react-native-vector-icons --save
+react-native link
+```
+
+Two required props `height` and `renderTextInput`, but they won't take you far on their own.
+
+The input row is broken into 4 containers.
+You have to declare what containers to render.
+
+```js
+.
+  renderLeftIcon={true}
+  renderTitle={true}
+  renderTextInput={true} //make sure to include onChangeText function with this!!
+  renderRightIcon={true}
+```
+
+then customize them
+
+```js
+.
+  leftIconName={'envelope'}
+  leftIconColor={'rgb(229, 179, 60)'}
+```
+
+
+
+```js
+import React, { Component } from 'react';
+import { View,TextInput, TouchableOpacity } from 'react-native';
+import InputRow from 'rn-input-row'
+
+export default class Example extends Component {
+
+  constructor(){
+    super();
+    this.state={
+
+    }
+  };
+
+  render(){
+    return(
+      <View>
+        <InputRow
+          renderLeftIcon={true}
+          renderTitle={true}
+          renderTextInput={true}
+          renderRightIcon={true}
+          leftIconName={'envelope'}
+          leftIconColor={'rgb(229, 179, 60)'}
+          onChangeText={
+            (text) => console.log(text)
+          }
+          isValid={
+            (bool) => console.log(bool)
+          }
+        />
+
+
+        // Here is a "trick" I use to force the blur to call the validations
+        // I just put a TextInput with absolute positioning and 0 height/width style and focus it
+        // I like calling the validation onBlur because it shows the activity icons when focused
+        <TextInput
+          ref={(ref) => this.input = ref }
+          style={{
+            position:'absolute',
+            height:0,
+            width:0,
+          }}
+        />
+        <TouchableOpacity
+        onPress={
+          () => this.input.focus()
+        }
+        style={{
+          marginTop:20,
+          marginHorizontal: 100,
+          borderRadius:10,
+          backgroundColor: 'magenta'
+        }}>
+        </TouchableOpacity>
+
+      </View>
+    )
+  };
+
+};
+
+```
+
+##### You can pass in validations.
+- Validations must be a function that `returns` `true` or `false` or one of the validations I defined
+
+```js
+  validate={
+    (text) => {
+      if (text.length > 8) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+```
+- Right now I have `email` and `zip` as options.  I will add more If I need more for my projects
+
+```js
+  validate={'email'}
+```
+
+- all possible props
+
+```js
+height={50}
+containerStyle={{
+  margin:5,
+  borderRadius:5,
+  borderWidth:1
+}}
+
+renderRightIcon={true}
+rightIconSize={20}
+//you can change the flex of the containers for enhanced layouts
+rightContainerFlex={1}
+validIconName={'check'}
+validIconColor={'green'}
+invalidIconName={'close'}
+invalidIconColor={'red'}
+activeIconName={'circle'}
+activeIconColor={'black'}
+activeIconSize={6}
+
+renderLeftIcon={true}
+leftIconSize={20}
+leftIconName={'envelope'}
+leftIconColor={'rgb(229, 179, 60)'}
+leftContainerFlex={1}
+
+renderTitle={true}
+title={'Email'}
+titleContainerFlex={2}
+titleTextStyle={{
+  fontSize:20,
+  textAlign:'left'
+}}
+
+renderTextInput={true}
+textContainerFlex={2}
+editable={true}
+text={''}
+textInputStyle={{
+  fontSize:20
+}}
+onChangeText={
+  (text) => console.log(text)
+}
+
+
+validate={'email'}
+// function called when Text Input in blurred
+isvalid={
+  (bool) => console.log(bool)
+}
+errorMessage={'Please enter an email address'}
+// the height the container will grow when the error message is shown
+errorOffset={10}
+errorTextStyle={{
+  fontSize:10,
+  color:'red'
+}}
+
+// *****  And this shit form TextInput as well
+// placeholder
+// placeholderTextColor
+// secureTextEntry
+// keyboardType
+// underlineColorAndroid
+```

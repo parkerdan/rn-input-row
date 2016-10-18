@@ -1,0 +1,23 @@
+{
+  "name": "rn-input-row",
+  "version": "1.0.0",
+  "description": "highly configurable input row for react-native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkerdan/rn-input-row.git"
+  },
+  "keywords": [
+    "react-native",
+    "input"
+  ],
+  "author": "Dan Parker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parkerdan/rn-input-row/issues"
+  },
+  "homepage": "https://github.com/parkerdan/rn-input-row#readme"
+}

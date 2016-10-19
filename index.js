@@ -321,7 +321,11 @@ export default class InputRow extends Component {
          <TouchableWithoutFeedback
            disabled={(!this.props.renderTextInput && this.props.editable) ? true:false}
            onPress={
-             () => this.textInput.focus()
+             () => {
+               if (this.props.renderTextInput) {
+                 this.textInput.focus()
+               }
+             }
            }>
            <View style={{
              flex:1,
@@ -350,7 +354,11 @@ export default class InputRow extends Component {
          <TouchableWithoutFeedback
            disabled={(this.props.renderTextInput && this.props.editable) ? true:false}
            onPress={
-             () => this.textInput.focus()
+             () => {
+               if (this.props.renderTextInput) {
+                 this.textInput.focus()
+               }
+             }
            }>
            <View style={{
              justifyContent:'center',

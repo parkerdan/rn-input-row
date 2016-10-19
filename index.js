@@ -54,6 +54,9 @@ const propTypes = {
  errorOffset: React.PropTypes.number,
  errorTextStyle: React.PropTypes.oneOfType([React.PropTypes.number,React.PropTypes.object]),
 
+ onFocus: React.PropTypes.func,
+ onLayout: React.PropTypes.func,
+
  // placeholder
  // placeholderTextColor
  // secureTextEntry
@@ -384,7 +387,12 @@ export default class InputRow extends Component {
          value={this.state.text}
          editable={(this.props.editable === false) ? false:true}
          onFocus={
-           () => this.setState({isFocused:true})
+           () => {
+             this.setState({isFocused:true});
+             if (this.props.onFocus) {
+               this.props.onFocus()
+             }
+           }
          }
          onChangeText={
            (text) => {
@@ -425,7 +433,15 @@ export default class InputRow extends Component {
 
  render(){
    return(
-     <Animated.View style={[{
+     <Animated.View
+       onLayout={
+         (e) => {
+           if (this.props.onLayout) {
+             this.props.onLayout(e)
+           }
+         }
+       }
+       style={[{
        height: this.state.height,
        justifyContent:'center'
      },this.props.containerStyle]}>

@@ -222,6 +222,14 @@ errorTextStyle={{
   color:'red'
 }}
 
+onFocus={
+  () => console.log('I am focused')
+}
+
+onLayout={
+  (e) => console.log(e.nativeEvent.layout)
+}
+
 // *****  And this shit form TextInput as well
 // placeholder
 // placeholderTextColor

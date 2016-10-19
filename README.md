@@ -44,7 +44,9 @@ then customize them
 ```js
 import React, { Component } from 'react';
 import { View, TextInput, TouchableOpacity, Text } from 'react-native';
-import InputRow from 'rn-input-row'
+import InputRow from 'rn-input-row';
+import dismissKeyboard from 'react-native/Libraries/Utilities/dismissKeyboard';
+
 
 export default class Example extends Component {
 
@@ -112,19 +114,12 @@ export default class Example extends Component {
 
 
         // Here is a "trick" I use to force the blur to call the validations
-        // I just put a TextInput with absolute positioning and 0 height/width style and focus it
+        // I just dismissKeyboard
         // I like calling the validation onBlur because it shows the activity icons when focused
-        <TextInput
-          ref={(ref) => this.input = ref }
-          style={{
-            position:'absolute',
-            height:0,
-            width:0,
-          }}
-        />
+
         <TouchableOpacity
           onPress={
-            () => this.input.focus()
+            () => dismissKeyboard()
           }
           style={{
             marginTop:20,

@@ -206,16 +206,16 @@ export default class InputRow extends Component {
    return(
      <View style={{
        flex:this.props.rightContainerFlex || 1,
-       flexDirection:'row'
+       flexDirection:'row',
+       alignItems:'center',
+       justifyContent:'center'
      }}>
        <Animated.View
          onLayout={
            () => this.animateDots()
          }
          style={{
-           flex:1,
-           alignItems:'center',
-           justifyContent:'center',
+           marginHorizontal:1,
            transform: [{
              scale: this.state.dotOne
            }],
@@ -232,9 +232,7 @@ export default class InputRow extends Component {
        </Animated.View>
 
        <Animated.View style={{
-         flex:1,
-         alignItems:'center',
-         justifyContent:'center',
+         marginHorizontal:1,
          transform: [{
            scale: this.state.dotTwo
          }],
@@ -251,9 +249,7 @@ export default class InputRow extends Component {
        </Animated.View>
 
        <Animated.View style={{
-         flex:1,
-         alignItems:'center',
-         justifyContent:'center',
+         marginHorizontal:1,
          transform: [{
            scale: this.state.dotThree
          }],

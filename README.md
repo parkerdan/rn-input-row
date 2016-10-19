@@ -25,10 +25,10 @@ You have to declare what containers to render.
 
 ```js
 .
-  renderLeftIcon={true}
-  renderTitle={true}
-  renderTextInput={true} //make sure to include onChangeText function with this!!
-  renderRightIcon={true}
+  renderLeftIcon={true} // has a flex of 1 by default
+  renderTitle={true}  //  has a flex of 2 by default
+  renderTextInput={true} // has a flex of 3 by default.   Make sure to include onChangeText function with this!!
+  renderRightIcon={true} // has a flex of 1 by default
 ```
 
 then customize them
@@ -229,6 +229,14 @@ onFocus={
 onLayout={
   (e) => console.log(e.nativeEvent.layout)
 }
+
+// can use this as a button, TextInput is disabled if button is enabled
+// validIcon will be rendered as the right icon if you want a right icon
+isButton={boolean}
+onPress={
+  () => console.log('You pressed button')
+}
+
 
 // *****  And this shit form TextInput as well
 // placeholder

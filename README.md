@@ -1,5 +1,8 @@
 # rn-input-row
 
+![Example One](./inputrow.gif "Input Rows")
+
+
 - This is a HIGHLY customizable ANIMATED input row for React-Native.
 
 - Good for single line form inputs.
@@ -7,7 +10,7 @@
 ##### Requires react-native-vector-icons/FontAwesome
 ###### All Icon Names are the Font Awesome available options
 
-- There are are built in default values, but your can change just about anything.
+- There are are built in default values, but you can change just about anything.
 
 ```js
 npm install rn-input-row --save
@@ -40,7 +43,7 @@ then customize them
 
 ```js
 import React, { Component } from 'react';
-import { View,TextInput, TouchableOpacity } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import InputRow from 'rn-input-row'
 
 export default class Example extends Component {
@@ -54,12 +57,16 @@ export default class Example extends Component {
 
   render(){
     return(
-      <View>
+      <View style={{paddingTop:50}}>
         <InputRow
+          height={40}
           renderLeftIcon={true}
           renderTitle={true}
           renderTextInput={true}
           renderRightIcon={true}
+          title={'Email'}
+          validate={'email'}
+          errorMessage={'Please enter an email address'}
           leftIconName={'envelope'}
           leftIconColor={'rgb(229, 179, 60)'}
           onChangeText={
@@ -68,6 +75,39 @@ export default class Example extends Component {
           isValid={
             (bool) => console.log(bool)
           }
+          containerStyle={{
+            borderTopWidth:1,
+            borderBottomWidth:1,
+          }}
+        />
+        <InputRow
+          height={40}
+          renderLeftIcon={true}
+          renderTitle={true}
+          renderTextInput={true}
+          renderRightIcon={true}
+          title={'User Name'}
+          validate={
+            (text) => {
+              if (text.length >=8) {
+                return true
+              } else {
+                return false
+              }
+            }
+          }
+          errorMessage={'User Name must be 8 characters'}
+          leftIconName={'users'}
+          leftIconColor={'blue'}
+          onChangeText={
+            (text) => console.log(text)
+          }
+          isValid={
+            (bool) => console.log(bool)
+          }
+          containerStyle={{
+            borderBottomWidth:1,
+          }}
         />
 
 
@@ -83,15 +123,19 @@ export default class Example extends Component {
           }}
         />
         <TouchableOpacity
-        onPress={
-          () => this.input.focus()
-        }
-        style={{
-          marginTop:20,
-          marginHorizontal: 100,
-          borderRadius:10,
-          backgroundColor: 'magenta'
-        }}>
+          onPress={
+            () => this.input.focus()
+          }
+          style={{
+            marginTop:20,
+            marginHorizontal: 100,
+            borderRadius:10,
+            backgroundColor: 'magenta',
+            alignItems:'center',
+            justifyContent:'center',
+            padding:20
+          }}>
+          <Text>Submit</Text>
         </TouchableOpacity>
 
       </View>

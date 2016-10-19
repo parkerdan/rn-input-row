@@ -360,7 +360,7 @@ export default class InputRow extends Component {
              <Text
                numberOfLines={1}
                style={[{
-                 fontSize:20,
+                 fontSize:14,
                },this.props.titleTextStyle]}>
                {this.props.title}
              </Text>
@@ -396,7 +396,7 @@ export default class InputRow extends Component {
          style={[{
            flex:this.props.textContainerFlex || 3,
            justifyContent:'center',
-           fontSize:20,
+           fontSize:14,
          },this.props.textInputStyle]}>
 
        </TextInput>

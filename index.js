@@ -113,6 +113,11 @@ componentWillMount(){
 
 };
 
+componentWillUnmount(){
+  this.animateDots = null;
+  this.reverseAnimate = null;
+};
+
 animateDots(){
   if (this.state.isFocused) {
     Animated.stagger(100,[

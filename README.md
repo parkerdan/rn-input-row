@@ -155,7 +155,7 @@ export default class Example extends Component {
     }
   }
 ```
-- Right now I have `email` and `zip` as options.  I will add more If I need more for my projects
+- Right now I have `email`, `zip`, and `currency` as options.  I will add more If I need more for my projects
 
 ```js
   validate={'email'}
@@ -230,7 +230,8 @@ onLayout={
   (e) => console.log(e.nativeEvent.layout)
 }
 
-// can use this as a button, TextInput is disabled if button is enabled
+// can use this as a button, TextInput is not editable if button is enabled
+// you can set a value to TextInput with placeholder if button is enabled
 // validIcon will be rendered as the right icon if you want a right icon
 isButton={boolean}
 onPress={

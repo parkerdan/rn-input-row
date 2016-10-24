@@ -93,7 +93,7 @@ this.state = {
   dotThree: new Animated.Value(.5),
   isValid: true,
   isFocused: false,
-  text:'',
+  text:props.text || '',
   validate:false,
   email:email,
   zip:zip,

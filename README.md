@@ -177,17 +177,33 @@ rightIconSize={20}
 rightContainerFlex={1}
 validIconName={'check'}
 validIconColor={'green'}
+// or require a local icon
+validIconSource={require('../Folder/file.ext')}
+validIconStyle={{
+  height:30,
+  width:30,
+  tintColor:'deeppink'
+}}
+
 invalidIconName={'close'}
 invalidIconColor={'red'}
+
 activeIconName={'circle'}
 activeIconColor={'black'}
 activeIconSize={6}
 
 renderLeftIcon={true}
+leftContainerFlex={1}
 leftIconSize={20}
 leftIconName={'envelope'}
 leftIconColor={'rgb(229, 179, 60)'}
-leftContainerFlex={1}
+// or require local icon
+leftIconSource={require('../Folder/file.ext')}
+leftIconStyle={{
+  height:30,
+  width:30,
+  tintColor:'deeppink'
+}}
 
 renderTitle={true}
 title={'Email'}

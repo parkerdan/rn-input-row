@@ -1,6 +1,6 @@
 {
   "name": "rn-input-row",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "highly configurable input row for react-native",
   "main": "index.js",
   "scripts": {

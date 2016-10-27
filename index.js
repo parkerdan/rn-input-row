@@ -513,6 +513,7 @@ if (this.props.renderTextInput) {
         flex:this.props.textContainerFlex || 3,
         justifyContent:'center',
         fontSize:14,
+        height:this.props.height,
       },this.props.textInputStyle]}>
 
     </TextInput>

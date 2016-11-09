@@ -165,12 +165,12 @@ export default class Example extends Component {
 
 | Prop  |  Type  |  Description  |
 | ---   |  ---   |  ---          |
-| renderLeftIcon | boolean **REQUIRED** | render the left icon |
-| renderTitle | boolean **REQUIRED** | render the title |
+| height | number **REQUIRED** | height of the container |
 | renderTextInput | boolean **REQUIRED** | render the text input |
-| renderRightIcon | boolean **REQUIRED** | render the right icon |
+| renderLeftIcon | boolean | render the left icon |
+| renderTitle | boolean | render the title |
+| renderRightIcon | boolean | render the right icon |
 |||
-| height | number | height of the container |
 | containerStyle | object | styles applied to the container |
 | rightIconSize | number | size of the rightSide icon (default-20) |
 | rightContainerFlex | number | flex of the right side icon container (default-1) |

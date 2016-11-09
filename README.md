@@ -161,104 +161,53 @@ export default class Example extends Component {
   validate={'email'}
 ```
 
-- all possible props
+### Props
 
-```js
-height={50}
-containerStyle={{
-  margin:5,
-  borderRadius:5,
-  borderWidth:1
-}}
-
-renderRightIcon={true}
-rightIconSize={20}
-//you can change the flex of the containers for enhanced layouts
-rightContainerFlex={1}
-validIconName={'check'}
-validIconColor={'green'}
-// or require a local icon
-validIconSource={require('../Folder/file.ext')}
-validIconStyle={{
-  height:30,
-  width:30,
-  tintColor:'deeppink'
-}}
-
-invalidIconName={'close'}
-invalidIconColor={'red'}
-
-activeIconName={'circle'}
-activeIconColor={'black'}
-activeIconSize={6}
-
-renderLeftIcon={true}
-leftContainerFlex={1}
-leftIconSize={20}
-leftIconName={'envelope'}
-leftIconColor={'rgb(229, 179, 60)'}
-// or require local icon
-leftIconSource={require('../Folder/file.ext')}
-leftIconStyle={{
-  height:30,
-  width:30,
-  tintColor:'deeppink'
-}}
-
-renderTitle={true}
-title={'Email'}
-titleContainerFlex={2}
-titleTextStyle={{
-  fontSize:20,
-  textAlign:'left'
-}}
-
-renderTextInput={true}
-textContainerFlex={2}
-editable={true}
-text={''}
-textInputStyle={{
-  fontSize:20
-}}
-onChangeText={
-  (text) => console.log(text)
-}
-
-
-validate={'email'}
-// function called when Text Input in blurred
-isvalid={
-  (bool) => console.log(bool)
-}
-errorMessage={'Please enter an email address'}
-// the height the container will grow when the error message is shown
-errorOffset={10}
-errorTextStyle={{
-  fontSize:10,
-  color:'red'
-}}
-
-onFocus={
-  () => console.log('I am focused')
-}
-
-onLayout={
-  (e) => console.log(e.nativeEvent.layout)
-}
-
-// can use this as a button, TextInput is not editable if button is enabled
-// you can set a value to TextInput with placeholder if button is enabled
-// validIcon will be rendered as the right icon if you want a right icon
-isButton={boolean}
-onPress={
-  () => console.log('You pressed button')
-}
-
-
-// *****  And this shit form TextInput as well
-// placeholder
-// placeholderTextColor
-// secureTextEntry
-// keyboardType
-// underlineColorAndroid
-```
+| Prop  |  Type  |  Description  |
+| ---   |  ---   |  ---          |
+| renderLeftIcon | boolean **REQUIRED** | render the left icon |
+| renderTitle | boolean **REQUIRED** | render the title |
+| renderTextInput | boolean **REQUIRED** | render the text input |
+| renderRightIcon | boolean **REQUIRED** | render the right icon |
+|||
+| height | number | height of the container |
+| containerStyle | object | styles applied to the container |
+| rightIconSize | number | size of the rightSide icon (default-20) |
+| rightContainerFlex | number | flex of the right side icon container (default-1) |
+| validIconName | string (FontAwesome Icon name) | what icon to render if valid input (default-check) |
+| validIconColor | string | color of the valid icon (default-green) |
+| validIconSource | require('../Folder/file.ext') | optionally supply your own icon as the valid icon |
+| validIconStyle | object | styles applied to the icon you supply, only used with the above prop|
+| invalidIconName |string (FontAwesome Icon name) | what icon to render if inValid input (default-close...an X) |
+| invalidIconColor | string | color of the inValid icon (default-red) |
+| activeIconName | string (FontAwesome Icon name) | there are three icons that animate when the input is focused (default-circle)|
+| activeIconColor | string | color of the active icons (default-black) |
+|activeIconSize | number | size of the active icons (default-6) |
+| leftIconSize | number | size of the left icon (default-20) |
+| leftContainerFlex | number | flex of the left side icon container (default-1)|
+| leftIconName | string (FontAwesome Icon name) | what icon to render on left side of container |
+| leftIconColor | string | the color of the icon on the left side |
+| leftIconSource | require('../Folder/file.ext') | optionally supply your own icon as the left icon |
+| leftIconStyle | object | styles applied to the icon you supply, only used with the above prop|
+| title | string | what text to display in title container |
+| titleContainerFlex | number | flex of the title container (default-2) |
+| titleTextStyle | object | styles applied to the title text |
+| text | string | the text for the text input |
+| placeholder | string | same as TextInput |
+| placeholderTextColor | string | same as TextInput |
+| secureTextEntry | boolean | same as TextInput |
+| keyboardType | string | same as TextInput |
+| underlineColorAndroid | string | same as TextInput |
+| editable | boolean | wether the text input is editable (default-true) |
+| onChangeText | function **Required If Editable** | just like TextInput function |
+| textInputStyle | object | styles applied to the text of the text input |
+| onFocus | function | called when text input is focused |
+| textContainerFlex | number | flex of the text input container (default-3) |
+|validate | 'email','zip','currency', or function | what to validate.  If you supply a function it takes in the text as the argument and **MUST** return true or false|
+|isValid | function | function called when input loses focus and returns true or false |
+| errorMessage | string | what message to display when the input does not pass the validation |
+| errorOffset | number | how much should the container grow when there is an error (default-10) |
+| errorTextStyle | object | styles to apply to the error text (default {color:'red',fontSize:10}) |
+| onLayout | function | function called on outermost container layout |
+| isButton | boolean | (default-false) when true, the input row can be used as a button, validIcon will be the right side icon applied, and text input is not editable |
+| onPress | function | function called if isButton is true |

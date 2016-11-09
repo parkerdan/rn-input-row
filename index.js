@@ -66,7 +66,7 @@ isvalid: React.PropTypes.func,
 errorMessage: React.PropTypes.string,
 errorOffset: React.PropTypes.number,
 errorTextStyle: React.PropTypes.oneOfType([React.PropTypes.number,React.PropTypes.object,React.PropTypes.array]),
-forceShowError: React.PropTypes.bool, //force show the error messege...i.e, user hasn't input a value so the error hasn't shown.  Start not showing an error for better UX, but if no input is entered you can force show with this props, just remember to clear is on your component side once the validation comes back.
+forceShowError: React.PropTypes.bool, //
 
 onFocus: React.PropTypes.func,
 onLayout: React.PropTypes.func,

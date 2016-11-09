@@ -211,3 +211,4 @@ export default class Example extends Component {
 | onLayout | function | function called on outermost container layout |
 | isButton | boolean | (default-false) when true, the input row can be used as a button, validIcon will be the right side icon applied, and text input is not editable |
 | onPress | function | function called if isButton is true |
+| forceShowError | boolean | Force show the error message. Example, user hasn't input a value so the error hasn't shown.  This starts by not showing an error for better UX, but if no input is entered you can force show with this prop, just remember to clear it on your component side once the validation comes back |

@@ -163,52 +163,52 @@ export default class Example extends Component {
 
 ### Props
 
-| Prop  |  Type  |  Description  |
-| ---   |  ---   |  ---          |
-| height | number **REQUIRED** | height of the container |
-| renderTextInput | boolean **REQUIRED** | render the text input |
-| renderLeftIcon | boolean | render the left icon |
-| renderTitle | boolean | render the title |
-| renderRightIcon | boolean | render the right icon |
+| Prop  |  Type  |  Description  | Required |
+| ---   |  ---   |  ---          | --- |
+| height | number | height of the container | **YES** |
+| renderTextInput | boolean  | render the text input | **YES** |
+| renderLeftIcon | boolean | render the left icon | suggested |
+| renderTitle | boolean | render the title | suggested |
+| renderRightIcon | boolean | render the right icon | suggested |
 |||
-| containerStyle | object | styles applied to the container |
-| rightIconSize | number | size of the rightSide icon (default-20) |
-| rightContainerFlex | number | flex of the right side icon container (default-1) |
-| validIconName | string (FontAwesome Icon name) | what icon to render if valid input (default-check) |
-| validIconColor | string | color of the valid icon (default-green) |
-| validIconSource | require('../Folder/file.ext') | optionally supply your own icon as the valid icon |
-| validIconStyle | object | styles applied to the icon you supply, only used with the above prop|
-| invalidIconName |string (FontAwesome Icon name) | what icon to render if inValid input (default-close...an X) |
-| invalidIconColor | string | color of the inValid icon (default-red) |
-| activeIconName | string (FontAwesome Icon name) | there are three icons that animate when the input is focused (default-circle)|
-| activeIconColor | string | color of the active icons (default-black) |
-|activeIconSize | number | size of the active icons (default-6) |
-| leftIconSize | number | size of the left icon (default-20) |
-| leftContainerFlex | number | flex of the left side icon container (default-1)|
-| leftIconName | string (FontAwesome Icon name) | what icon to render on left side of container |
-| leftIconColor | string | the color of the icon on the left side |
-| leftIconSource | require('../Folder/file.ext') | optionally supply your own icon as the left icon |
-| leftIconStyle | object | styles applied to the icon you supply, only used with the above prop|
-| title | string | what text to display in title container |
-| titleContainerFlex | number | flex of the title container (default-2) |
-| titleTextStyle | object | styles applied to the title text |
-| text | string | the text for the text input |
-| placeholder | string | same as TextInput |
-| placeholderTextColor | string | same as TextInput |
-| secureTextEntry | boolean | same as TextInput |
-| keyboardType | string | same as TextInput |
-| underlineColorAndroid | string | same as TextInput |
-| editable | boolean | wether the text input is editable (default-true) |
-| onChangeText | function **Required If Editable** | just like TextInput function |
-| textInputStyle | object | styles applied to the text of the text input |
-| onFocus | function | called when text input is focused |
-| textContainerFlex | number | flex of the text input container (default-3) |
-|validate | 'email','zip','currency', or function | what to validate.  If you supply a function it takes in the text as the argument and **MUST** return true or false|
-|isValid | function | function called when input loses focus and returns true or false |
-| errorMessage | string | what message to display when the input does not pass the validation |
-| errorOffset | number | how much should the container grow when there is an error (default-10) |
-| errorTextStyle | object | styles to apply to the error text (default {color:'red',fontSize:10}) |
-| onLayout | function | function called on outermost container layout |
-| isButton | boolean | (default-false) when true, the input row can be used as a button, validIcon will be the right side icon applied, and text input is not editable |
-| onPress | function | function called if isButton is true |
-| forceShowError | boolean | Force show the error message. Example, user hasn't input a value so the error hasn't shown.  This starts by not showing an error for better UX, but if no input is entered you can force show with this prop, just remember to clear it on your component side once the validation comes back |
+| containerStyle | object | styles applied to the container | no |
+| rightIconSize | number | size of the rightSide icon (default-20) | no |
+| rightContainerFlex | number | flex of the right side icon container (default-1) | no |
+| validIconName | string (FontAwesome Icon name) | what icon to render if valid input (default-check) | no |
+| validIconColor | string | color of the valid icon (default-green) | no |
+| validIconSource | require('../Folder/file.ext') | optionally supply your own icon as the valid icon | no |
+| validIconStyle | object | styles applied to the icon you supply, only used with the above prop| no |
+| invalidIconName |string (FontAwesome Icon name) | what icon to render if inValid input (default-close...an X) | no |
+| invalidIconColor | string | color of the inValid icon (default-red) | no |
+| activeIconName | string (FontAwesome Icon name) | there are three icons that animate when the input is focused (default-circle)| no |
+| activeIconColor | string | color of the active icons (default-black) | no |
+|activeIconSize | number | size of the active icons (default-6) | no |
+| leftIconSize | number | size of the left icon (default-20) | no |
+| leftContainerFlex | number | flex of the left side icon container (default-1)| no |
+| leftIconName | string (FontAwesome Icon name) | what icon to render on left side of container | no |
+| leftIconColor | string | the color of the icon on the left side | no |
+| leftIconSource | require('../Folder/file.ext') | optionally supply your own icon as the left icon |  no |
+| leftIconStyle | object | styles applied to the icon you supply, only used with the above prop| no |
+| title | string | what text to display in title container | no |
+| titleContainerFlex | number | flex of the title container (default-2) | no |
+| titleTextStyle | object | styles applied to the title text | no |
+| text | string | the text for the text input | no |
+| placeholder | string | same as TextInput | no |
+| placeholderTextColor | string | same as TextInput | no |
+| secureTextEntry | boolean | same as TextInput | no |
+| keyboardType | string | same as TextInput | no |
+| underlineColorAndroid | string | same as TextInput | no |
+| editable | boolean | wether the text input is editable (default-true) | no |
+| onChangeText | function  | just like TextInput function | if editable is true |
+| textInputStyle | object | styles applied to the text of the text input | no |
+| onFocus | function | called when text input is focused | no |
+| textContainerFlex | number | flex of the text input container (default-3) | no |
+|validate | 'email','zip','currency', or function | what to validate.  If you supply a function it takes in the text as the argument and **MUST** return true or false| no |
+|isValid | function | function called when input loses focus and returns true or false | no |
+| errorMessage | string | what message to display when the input does not pass the validation | no |
+| errorOffset | number | how much should the container grow when there is an error (default-10) | no |
+| errorTextStyle | object | styles to apply to the error text (default {color:'red',fontSize:10}) | no |
+| onLayout | function | function called on outermost container layout | no |
+| isButton | boolean | (default-false) when true, the input row can be used as a button, validIcon will be the right side icon applied, and text input is not editable | no |
+| onPress | function | function called if isButton is true | if isButton is true |
+| forceShowError | boolean | Force show the error message. Example, user hasn't input a value so the error hasn't shown.  This starts by not showing an error for better UX, but if no input is entered you can force show with this prop, just remember to clear it on your component side once the validation comes back | no |

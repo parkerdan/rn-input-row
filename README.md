@@ -1,4 +1,5 @@
 # rn-input-row
+<a href="https://npmjs.org/package/rn-input-row"><img alt="npm version" src="http://img.shields.io/npm/dt/rn-input-row.svg?style=flat-square"></a>
 
 ![Example One](./inputrow.gif "Input Rows")
 

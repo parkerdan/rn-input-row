@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
    alignItems:'center',
    justifyContent:'center',
    flexDirection:'row',
-   backgroundColor:'red'
  }
 });
 
@@ -48,6 +47,8 @@ class RightIcon extends React.Component {
  };
 
  componentWillUnmount(){
+   this.animateDots = null;
+   this.reverseAnimate = null;
    this.state.dotOne.stopAnimation();
    this.state.dotTwo.stopAnimation();
    this.state.dotThree.stopAnimation();

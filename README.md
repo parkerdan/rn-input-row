@@ -26,6 +26,12 @@
 I have written some validations you can import and use.
 
 
+## Button
+`import { Button } from 'rn-input-row';`
+- Must include an `onPress` in `containerProps` when usng the `Button`
+
+I have included a `Button` component you can import and use so you can have a touchable form entry that blends seamlessly with the rest.  Structure is similar to the `InputRow`, except `textInputProps` are replaced with `detailProps` so you can have `titleProps` and `detailProps` in the same row.  The `rightIconProps` on the `Button` will be exactly like the `leftIconProps`.
+
 
 
 ```js
@@ -35,11 +41,11 @@ react-native link react-native-vector-icons
 ```
 ```js
 import React from 'react';
-import { View,StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import dismissKeyboard from 'react-native/Libraries/Utilities/dismissKeyboard';
 
 
-import { InputRow, validateEmail, validateZip, validateCurrency } from 'rn-input-row';
+import { InputRow, Button, validateEmail, validateZip, validateCurrency } from 'rn-input-row';
 
 const activityIconProps = {name:'circle',size:6,color:'black'}
 
@@ -224,11 +230,30 @@ export default class Example extends React.Component {
             activityIconProps: activityIconProps
           }}
         />
-        <TouchableOpacity
-          onPress={this.submit}
-          style={styles.submit}>
-          <Text>{'Submit'}</Text>
-        </TouchableOpacity>
+
+        <Button
+          containerProps={{
+            onPress: this.submit,
+            style: [styles.rowContainer,{marginTop:10,backgroundColor:'deeppink'}]
+          }}
+          titleProps={{
+            text: 'Submit',
+            style: [styles.title,{textAlign:'center'}]
+          }}
+          leftIconProps={{
+            localIcon:false,
+            name: 'star',
+            size:12,
+            color: 'yellow'
+          }}
+          rightIconProps={{
+            localIcon:false,
+            name: 'star',
+            size:12,
+            color: 'yellow'
+          }}
+        />
+
       </View>
     )
   }

@@ -15,10 +15,11 @@ import {RightIcon,LeftIcon} from './iconContainers';
 
 const propTypes = {
 containerProps: React.PropTypes.shape({
- style: React.PropTypes.any.isRequired
+ style: React.PropTypes.oneOfType([React.PropTypes.number,React.PropTypes.object,React.PropTypes.array]).isRequired,
 }),
 errorProps: React.PropTypes.shape({
  render: React.PropTypes.bool.isRequired,
+ text: React.PropTypes.string.isRequired,
 }),
 leftIconProps: React.PropTypes.shape({
  localIcon: React.PropTypes.bool.isRequired
@@ -33,6 +34,7 @@ rightIconProps: React.PropTypes.shape({
  renderActivity: React.PropTypes.bool.isRequired,
  renderIcon: React.PropTypes.bool.isRequired,
  localIcon: React.PropTypes.bool.isRequired,
+ activityIconProps: React.PropTypes.object,
 })
 };
 

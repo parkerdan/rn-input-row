@@ -5,43 +5,20 @@
 - It returns nothing to you, it just transfers props to the proper components supplied by RN and Animates activity and error messages
 - Completely up to you how you want to use the validations, get and set values.  I do it onBlur of TextInput rather than onChangeText to avoid re-rendering on every keystroke...
 
+### Uses react-native-vector-icons/FontAwesome as the icon source
+
+
 
 ![Example One](./newgif.gif "Input Rows")
 
-
-
-##### Uses react-native-vector-icons/FontAwesome as the icon source
-containerProps: React.PropTypes.shape({
- style: React.PropTypes.oneOfType([React.PropTypes.number,React.PropTypes.object,React.PropTypes.array]).isRequired,
-}),
-errorProps: React.PropTypes.shape({
- render: React.PropTypes.bool.isRequired,
- text: R
-}),
-leftIconProps: React.PropTypes.shape({
- localIcon: React.PropTypes.bool.isRequired
-}),
-titleProps: React.PropTypes.shape({
- text: React.PropTypes.string.isRequired
-}),
-textInputProps: React.PropTypes.shape({
- style: React.PropTypes.any.isRequired
-}),
-rightIconProps: React.PropTypes.shape({
- renderActivity: React.PropTypes.bool.isRequired,
- renderIcon: React.PropTypes.bool.isRequired,
- localIcon: React.PropTypes.bool.isRequired,
- activityIconProps: React.PropTypes.object,
-
-
 | Prop | Type | Description | Requirements |
 | ---  | ---  | ---         | ---          |
-| containerProps | object | View Props. You can exclude *justifyContent* as that is hardcoded | **ALWAYS REQUIRED** Must include `style` with a *height* inside the style. |
+| containerProps | object | View Props | **ALWAYS REQUIRED** Must include `style` with a *height* inside the style. |
 | errorProps | object | Text Props plus two custom props `render` and `text` for the error message | Must include `render` and `text` when using this prop |
-| leftIconProps | object | Icon or Image props, depending on the custom `localIcon` prop | Must include `localIcon` when using this prop |
+| leftIconProps | object | Icon or Image props, depending on the `localIcon` prop | Must include `localIcon` when using this prop.  `localIcon:true` will transfer props to an Image component, `localIcon:false` will transfer props to `Icon` |
 | titleProps | object | Text Props for the title plus `text` | Must include `text` when using this prop |
-| textInputProps | object | TextInput Props for the input portion | Must include `style` when using this at least put a `{flex:1}` in style |
-| rightIconProps | object | same as `leftIconProps` plus `renderActivity` `renderIcon` `activityIconProps` | Must use `renderActivity` `renderIcon` `localIcon` when using this.  Must use `activityIconProps` when `renderActivity` is `true`
+| textInputProps | object | TextInput Props for the input portion | Must include `style` when using this at least put a `{flex:1}` in style, shit...put a `flex:something` on all of them...the icons have a flex 1 for reference |
+| rightIconProps | object | same as `leftIconProps` plus `renderActivity` `renderIcon` `activityIconProps` | Must use `renderActivity` `renderIcon` `localIcon` when using this.  Must use `activityIconProps` when `renderActivity` is `true` `activityIconProps` will only transfer to an `Icon`
 
 
 ## Validations

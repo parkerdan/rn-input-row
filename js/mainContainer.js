@@ -72,7 +72,7 @@ reverseAnimate = () => {
      Animated.timing(this.state.height,{
        toValue: this.state.height._startingValue,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      })
    ]).start()
  }
@@ -85,7 +85,7 @@ animateError = () => {
    Animated.timing(this.state.height,{
     toValue: this.state.height._startingValue + 10,
     duration: 200,
-    easing: Easing.linear
+    easing: Easing.linear()
   }).start( () => this.setState({renderError:true}) )
  }
 };
@@ -182,7 +182,7 @@ render(){
 
 class Input extends React.Component {
 render(){
- if (Object.keys(this.props.length > 0)) {
+ if (Object.keys(this.props).length > 0) {
    return <TextInput ref={(ref) => this.textInput = ref } {...this.props}/>
  } else {
    return null

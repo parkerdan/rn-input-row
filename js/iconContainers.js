@@ -61,17 +61,17 @@ animateDots = () => {
      Animated.timing(this.state.dotOne,{
        toValue: 1,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      }),
      Animated.timing(this.state.dotTwo,{
        toValue: 1,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      }),
      Animated.timing(this.state.dotThree,{
        toValue: 1,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      }),
 
    ]).start(this.reverseAnimate)
@@ -84,17 +84,17 @@ reverseAnimate = () => {
      Animated.timing(this.state.dotOne,{
        toValue: .5,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      }),
      Animated.timing(this.state.dotTwo,{
        toValue: .5,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      }),
      Animated.timing(this.state.dotThree,{
        toValue: .5,
        duration: 200,
-       easing: Easing.linear
+       easing: Easing.linear()
      }),
 
    ]).start(this.animateDots)

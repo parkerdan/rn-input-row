@@ -54,8 +54,7 @@ componentWillReceiveProps(nextProps){
    if (nextProps.errorProps.render !==  this.state.renderError) {
      this.animateError()
    }
- }
- if (nextProps.errorProps && nextProps.errorProps.render === false) {
+ } else if (nextProps.errorProps && !nextProps.errorProps.render) {
    if (this.state.renderError) {
      this.setState({renderError:false},this.reverseAnimate)
    }

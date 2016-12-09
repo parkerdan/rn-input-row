@@ -10,9 +10,9 @@ return /^\d{5}(-\d{4})?$/.test(input);
 };
 
 export const validateCurrency = (input, allowBlank) => {
- if (input === '' && allowBlank) {
-   return true
- } else {
-   return /^(?=\(.*\)|[^()]*$)\(?\d{1,3}(,?\d{3})?(\.\d\d?)?\)?$/.test(input)
- }
+if (input === '' && allowBlank) {
+  return true
+} else {
+  return /(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/.test(input)
+}
 };
